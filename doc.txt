@@ -1,0 +1,678 @@
+I'll create a Support page for the website and update the name from TBZ to MBZ Global. Let me start with the Support page:
+
+```html
+<!-- frontend/support.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | MBZ Global</title>
+    <link rel="stylesheet" href="styles/materialize.min.css">
+    <link rel="stylesheet" href="styles/fonts/material-icons.css">
+    <link rel="stylesheet" href="styles/custom.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-extended cobalt-blue">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">MBZ Global</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="about-faq.html">FAQ</a></li>
+                <li><a href="support.html" class="active">Support</a></li>
+                <li><a href="legal.html">Legal</a></li>
+                <li><a href="index.html#contact" class="btn waves-effect waves-light light-blue lighten-1">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <ul class="sidenav" id="mobile-nav">
+        <li>
+            <div class="user-view">
+                <div class="background cobalt-blue">
+                </div>
+                <a href="#"><span class="white-text name">MBZ Global</span></a>
+                <a href="#"><span class="white-text email">Pure Water Bottling</span></a>
+            </div>
+        </li>
+        <li><a href="index.html"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="index.html#products"><i class="material-icons">local_drink</i>Products</a></li>
+        <li><a href="index.html#about"><i class="material-icons">info</i>About</a></li>
+        <li><a href="about-faq.html"><i class="material-icons">help</i>FAQ</a></li>
+        <li><a href="support.html" class="active"><i class="material-icons">support_agent</i>Support</a></li>
+        <li><a href="legal.html"><i class="material-icons">gavel</i>Legal</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="index.html#contact" class="waves-effect"><i class="material-icons">contact_mail</i>Contact Us</a></li>
+    </ul>
+
+    <!-- Support Hero Section -->
+    <section class="section support-hero light-blue lighten-5">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 offset-m2 center-align">
+                    <h1 class="cobalt-blue-text">How Can We Help?</h1>
+                    <p class="flow-text">Our support team is here to assist you with any questions or concerns about our products and services.</p>
+                    
+                    <!-- Search Support -->
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="input-field">
+                                <i class="material-icons prefix">search</i>
+                                <input id="support-search" type="text" placeholder="Search for answers...">
+                                <label for="support-search">What can we help you with?</label>
+                            </div>
+                            <button class="btn waves-effect waves-light cobalt-blue" onclick="searchSupport()">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Options Section -->
+    <section class="section white">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Support -->
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content center-align">
+                            <i class="material-icons large cobalt-blue-text">contact_support</i>
+                            <h4>Contact Support</h4>
+                            <p>Get in touch with our support team for personalized assistance.</p>
+                            <div class="card-action">
+                                <a href="#contact-form" class="btn waves-effect waves-light cobalt-blue modal-trigger">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ -->
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content center-align">
+                            <i class="material-icons large cobalt-blue-text">help_center</i>
+                            <h4>Browse FAQs</h4>
+                            <p>Find quick answers to common questions in our FAQ section.</p>
+                            <div class="card-action">
+                                <a href="about-faq.html" class="btn waves-effect waves-light cobalt-blue">View FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Support -->
+                <div class="col s12 m4">
+                    <div class="card hoverable">
+                        <div class="card-content center-align">
+                            <i class="material-icons large cobalt-blue-text">shopping_cart</i>
+                            <h4>Order Support</h4>
+                            <p>Need help with an order, delivery, or returns?</p>
+                            <div class="card-action">
+                                <a href="#order-support" class="btn waves-effect waves-light cobalt-blue">Order Help</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Issues Section -->
+    <section class="section light-blue lighten-5">
+        <div class="container">
+            <h2 class="center-align cobalt-blue-text">Common Issues & Solutions</h2>
+            
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">local_shipping</i>Delivery Issues</div>
+                    <div class="collapsible-body">
+                        <h5>My order hasn't arrived</h5>
+                        <p>If your order is late, please check:</p>
+                        <ul class="browser-default">
+                            <li>Check your shipping confirmation email for tracking information</li>
+                            <li>Allow 1-2 business days for processing before shipping</li>
+                            <li>Contact us if your order hasn't arrived within 7 business days of shipment</li>
+                        </ul>
+                        <a href="#contact-form" class="btn-small waves-effect waves-light cobalt-blue modal-trigger">Report Missing Delivery</a>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">receipt</i>Order Changes & Cancellations</div>
+                    <div class="collapsible-body">
+                        <h5>Can I change or cancel my order?</h5>
+                        <p>Order modifications are possible if your order hasn't been shipped yet:</p>
+                        <ul class="browser-default">
+                            <li>Contact us within 2 hours of placing your order for changes</li>
+                            <li>Cancellations are free if made before shipping</li>
+                            <li>Once shipped, you can refuse delivery or return the item</li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">autorenew</i>Returns & Refunds</div>
+                    <div class="collapsible-body">
+                        <h5>Our return policy</h5>
+                        <p>We accept returns within 30 days of delivery:</p>
+                        <ul class="browser-default">
+                            <li>Products must be unopened and in original packaging</li>
+                            <li>Contact us first to get a return authorization</li>
+                            <li>Refunds are processed within 5-10 business days after we receive the return</li>
+                        </ul>
+                        <a href="#contact-form" class="btn-small waves-effect waves-light cobalt-blue modal-trigger">Start Return</a>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">water_damage</i>Product Quality Concerns</div>
+                    <div class="collapsible-body">
+                        <h5>Quality assurance</h5>
+                        <p>If you have concerns about product quality:</p>
+                        <ul class="browser-default">
+                            <li>Check the expiration date on the bottle</li>
+                            <li>Store water in a cool, dry place away from direct sunlight</li>
+                            <li>Report any quality issues with the batch number from the bottle</li>
+                        </ul>
+                        <a href="#contact-form" class="btn-small waves-effect waves-light cobalt-blue modal-trigger">Report Quality Issue</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Form Modal -->
+    <div id="contact-form" class="modal">
+        <div class="modal-content">
+            <h4 class="cobalt-blue-text">Contact Support</h4>
+            <p>Fill out the form below and our support team will get back to you within 24 hours.</p>
+            
+            <form id="support-form">
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input id="support-name" type="text" required>
+                        <label for="support-name">Full Name *</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="support-email" type="email" required>
+                        <label for="support-email">Email Address *</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="support-topic" required>
+                            <option value="" disabled selected>Choose your issue</option>
+                            <option value="order">Order Issue</option>
+                            <option value="delivery">Delivery Problem</option>
+                            <option value="product">Product Quality</option>
+                            <option value="billing">Billing Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label>Support Topic *</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="support-message" class="materialize-textarea" required></textarea>
+                        <label for="support-message">How can we help you? *</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="support-order" type="text">
+                        <label for="support-order">Order Number (if applicable)</label>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="submit" class="btn waves-effect waves-light cobalt-blue">Submit Request</button>
+                    <a href="#!" class="modal-close btn-flat">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Support Modal -->
+    <div id="order-support" class="modal">
+        <div class="modal-content">
+            <h4 class="cobalt-blue-text">Order Support</h4>
+            
+            <div class="row">
+                <div class="col s12">
+                    <h5>Quick Order Help</h5>
+                    <p>Select the option that best describes your issue:</p>
+                    
+                    <div class="collection">
+                        <a href="#contact-form" class="collection-item modal-trigger modal-close">
+                            <i class="material-icons left">help</i>
+                            <span>I need help placing an order</span>
+                        </a>
+                        <a href="#contact-form" class="collection-item modal-trigger modal-close">
+                            <i class="material-icons left">schedule</i>
+                            <span>My order is delayed or hasn't arrived</span>
+                        </a>
+                        <a href="#contact-form" class="collection-item modal-trigger modal-close">
+                            <i class="material-icons left">assignment_return</i>
+                            <span>I want to return or exchange a product</span>
+                        </a>
+                        <a href="#contact-form" class="collection-item modal-trigger modal-close">
+                            <i class="material-icons left">credit_card</i>
+                            <span>I have a billing or payment question</span>
+                        </a>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <h5>Track Your Order</h5>
+                    <div class="input-field">
+                        <input id="track-order" type="text">
+                        <label for="track-order">Enter Order Number</label>
+                        <button class="btn waves-effect waves-light cobalt-blue" onclick="trackOrder()">Track</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer cobalt-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4" id="contact">
+                    <h5 class="white-text">Contact Support</h5>
+                    <ul>
+                        <li><i class="material-icons tiny">phone</i> Support: (555) 987-6543</li>
+                        <li><i class="material-icons tiny">email</i> support@mbzglobal.com</li>
+                        <li><i class="material-icons tiny">schedule</i> Mon-Fri: 8am-8pm EST</li>
+                        <li><i class="material-icons tiny">schedule</i> Sat-Sun: 9am-5pm EST</li>
+                    </ul>
+                </div>
+                <div class="col s12 m4">
+                    <h5 class="white-text">Quick Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.html#products">Products</a></li>
+                        <li><a class="grey-text text-lighten-3" href="about-faq.html">FAQ</a></li>
+                        <li><a class="grey-text text-lighten-3" href="legal.html">Legal Information</a></li>
+                        <li><a class="grey-text text-lighten-3" href="legal.html#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col s12 m4">
+                    <h5 class="white-text">Emergency Contact</h5>
+                    <p>For product safety emergencies or quality concerns outside business hours:</p>
+                    <p><i class="material-icons tiny">warning</i> Emergency: (555) 911-9111</p>
+                    <p class="small-text">Available 24/7 for urgent product safety issues only.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright dark-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6">
+                        © 2023 MBZ Global. All rights reserved.
+                    </div>
+                    <div class="col s12 m6 right-align">
+                        <a href="legal.html#privacy" class="grey-text text-lighten-4">Privacy Policy</a> | 
+                        <a href="legal.html#terms" class="grey-text text-lighten-4">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize mobile sidenav
+            const sidenav = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenav);
+            
+            // Initialize modals
+            const modals = document.querySelectorAll('.modal');
+            M.Modal.init(modals);
+            
+            // Initialize collapsible
+            const collapsible = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(collapsible);
+            
+            // Initialize select
+            const selects = document.querySelectorAll('select');
+            M.FormSelect.init(selects);
+            
+            // Support form submission
+            const supportForm = document.getElementById('support-form');
+            if (supportForm) {
+                supportForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const name = document.getElementById('support-name').value;
+                    const email = document.getElementById('support-email').value;
+                    const topic = document.getElementById('support-topic').value;
+                    
+                    // Show success message
+                    M.toast({
+                        html: `Thank you, ${name}! Your support request has been submitted. We'll contact you at ${email} within 24 hours.`,
+                        classes: 'rounded light-blue lighten-1',
+                        displayLength: 6000
+                    });
+                    
+                    // Close modal
+                    const modalInstance = M.Modal.getInstance(document.getElementById('contact-form'));
+                    modalInstance.close();
+                    
+                    // Reset form
+                    supportForm.reset();
+                    M.updateTextFields();
+                });
+            }
+        });
+        
+        // Search support function
+        function searchSupport() {
+            const query = document.getElementById('support-search').value;
+            if (query.trim() !== '') {
+                M.toast({
+                    html: `Searching support articles for: "${query}"`,
+                    classes: 'rounded light-blue lighten-1'
+                });
+                
+                // Simulate search results
+                setTimeout(() => {
+                    const results = [
+                        'How to track my order?',
+                        'Return policy information',
+                        'Product quality standards'
+                    ];
+                    
+                    let resultHTML = `<h6>Search Results for "${query}"</h6><ul>`;
+                    results.forEach(result => {
+                        resultHTML += `<li><a href="#!" onclick="showArticle('${result}')">${result}</a></li>`;
+                    });
+                    resultHTML += '</ul>';
+                    
+                    M.toast({
+                        html: resultHTML,
+                        classes: 'rounded light-blue lighten-1',
+                        displayLength: 8000
+                    });
+                }, 1000);
+            } else {
+                M.toast({
+                    html: 'Please enter a search term',
+                    classes: 'rounded orange'
+                });
+            }
+        }
+        
+        // Track order function
+        function trackOrder() {
+            const orderNumber = document.getElementById('track-order').value;
+            if (orderNumber.trim() !== '') {
+                M.toast({
+                    html: `Tracking order #${orderNumber}...`,
+                    classes: 'rounded light-blue lighten-1'
+                });
+                
+                // Simulate tracking results
+                setTimeout(() => {
+                    const statuses = ['Processing', 'Shipped', 'Out for Delivery', 'Delivered'];
+                    const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+                    
+                    M.toast({
+                        html: `Order #${orderNumber} status: <strong>${randomStatus}</strong>`,
+                        classes: 'rounded light-blue lighten-1',
+                        displayLength: 5000
+                    });
+                }, 1500);
+            } else {
+                M.toast({
+                    html: 'Please enter an order number',
+                    classes: 'rounded orange'
+                });
+            }
+        }
+        
+        // Show article function
+        function showArticle(title) {
+            M.toast({
+                html: `Showing article: <strong>${title}</strong><br>In a full implementation, this would load the article content.`,
+                classes: 'rounded light-blue lighten-1',
+                displayLength: 5000
+            });
+        }
+    </script>
+</body>
+</html>
+```
+
+Now, let me update the custom CSS file to include styles for the Support page:
+
+```css
+/* Add these styles to styles/custom.css */
+
+/* Support Page Styles */
+.support-hero {
+    padding: 80px 0 40px;
+}
+
+.support-hero h1 {
+    margin-bottom: 20px;
+}
+
+/* Collection items in modals */
+.collection a.collection-item {
+    color: var(--cobalt-blue);
+    transition: background-color 0.3s;
+}
+
+.collection a.collection-item:hover {
+    background-color: rgba(0, 71, 171, 0.1);
+}
+
+.collection a.collection-item i {
+    margin-right: 10px;
+}
+
+/* Small text for footer */
+.small-text {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Toast customization */
+.toast.rounded {
+    border-radius: 8px;
+}
+
+/* Collapsible header icons */
+.collapsible-header i {
+    margin-right: 15px;
+}
+
+/* Modal form styles */
+.modal .input-field {
+    margin-top: 1rem;
+}
+
+.modal-footer .btn {
+    margin-right: 10px;
+}
+```
+
+Now, let me update the main index.html file to change TBZ to MBZ and add the Support page to navigation:
+
+```html
+<!-- In index.html, update all instances of TBZ to MBZ -->
+<!-- Example updates: -->
+
+<!-- In the navigation bar -->
+<a href="#!" class="brand-logo">MBZ Global</a>
+
+<!-- In the hero section -->
+<h1 class="white-text">Pure Hydration, Perfected in Every Bottle</h1>
+<p class="flow-text white-text">MBZ Global delivers premium-quality purified water in environmentally conscious packaging for your daily hydration needs.</p>
+
+<!-- In product cards -->
+<span class="card-title activator cobalt-blue-text">MBZ 500ml<i class="material-icons right">more_vert</i></span>
+<span class="card-title activator cobalt-blue-text">MBZ 1L<i class="material-icons right">more_vert</i></span>
+<span class="card-title activator cobalt-blue-text">MBZ 1.5L<i class="material-icons right">more_vert</i></span>
+
+<!-- In about section -->
+<h2 class="cobalt-blue-text">About MBZ Global</h2>
+<p class="flow-text">We are a premium water bottling company committed to delivering the purest drinking water while minimizing our environmental impact.</p>
+
+<!-- In the poster section -->
+<h2>Purity in Every Drop</h2>
+<h4>MBZ Global's advanced filtration ensures water quality that exceeds industry standards.</h4>
+
+<!-- Update navigation to include Support page -->
+<ul class="right hide-on-med-and-down">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="about-faq.html">FAQ</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="legal.html">Legal</a></li>
+    <li>
+        <form class="search-form">
+            <div class="input-field">
+                <input id="search" type="search" placeholder="Search products..." required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </li>
+    <li><a href="#contact" class="btn waves-effect waves-light light-blue lighten-1">Contact Us</a></li>
+</ul>
+
+<!-- Also update mobile navigation -->
+<li><a href="support.html"><i class="material-icons">support_agent</i>Support</a></li>
+
+<!-- Update footer -->
+© 2023 MBZ Global. All rights reserved.
+```
+
+Let me also update the server.js file to include the Support page route:
+
+```javascript
+// backend/server.js (updated)
+const express = require('express');
+const path = require('path');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Serve static files from the frontend directory
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Route for homepage
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
+
+// Route for about/faq page
+app.get('/about-faq', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/about-faq.html'));
+});
+
+// Route for support page
+app.get('/support', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/support.html'));
+});
+
+// Route for legal page
+app.get('/legal', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/legal.html'));
+});
+
+// API endpoints
+app.get('/api/products', (req, res) => {
+    const products = [
+        { id: 1, name: 'MBZ 500ml', price: 0.99, description: 'Perfect for on-the-go hydration' },
+        { id: 2, name: 'MBZ 1L', price: 1.49, description: 'Ideal for daily hydration' },
+        { id: 3, name: 'MBZ 1.5L', price: 1.99, description: 'Great for sharing or extended use' }
+    ];
+    res.json(products);
+});
+
+// Start server
+app.listen(PORT, () => {
+    console.log(`MBZ Global website running on port ${PORT}`);
+});
+```
+
+Let me also update the FAQ and Legal pages to change TBZ to MBZ:
+
+```html
+<!-- In about-faq.html and legal.html, update all instances: -->
+
+<!-- Brand name -->
+<a href="index.html" class="brand-logo">MBZ Global</a>
+
+<!-- Page titles -->
+<title>About & FAQ | MBZ Global</title>
+<title>Legal Information | MBZ Global</title>
+
+<!-- Content updates -->
+<p class="flow-text">MBZ Global is a leading pure water bottling company...</p>
+<!-- etc. -->
+```
+
+Support Page Features
+
+1. Comprehensive Support Options:
+   · Contact support form with multiple issue categories
+   · Direct links to FAQ page
+   · Order-specific support with tracking functionality
+2. Common Issues Section:
+   · Collapsible panels for delivery issues, order changes, returns, and product quality
+   · Clear, actionable solutions for each common problem
+   · Direct links to contact forms for specific issues
+3. Interactive Elements:
+   · Search functionality for support articles
+   · Modal-based contact forms
+   · Order tracking simulation
+   · Toast notifications for user feedback
+4. Emergency Contact Information:
+   · Dedicated emergency line for urgent product safety issues
+   · Clear business hours for different support channels
+5. Responsive Design:
+   · Mobile-first layout that works on all devices
+   · Touch-friendly collapsible panels and buttons
+
+Updated Project Structure
+
+```
+MBZ Website/
+├── backend/
+│   └── server.js
+├── frontend/
+│   ├── index.html
+│   ├── about-faq.html
+│   ├── support.html
+│   ├── legal.html
+│   ├── scripts/
+│   │   ├── jquery.min.js
+│   │   ├── materialize.min.js
+│   │   └── main.js
+│   └── styles/
+│       ├── materialize.min.css
+│       ├── fonts/
+│       │   └── material-icons.css
+│       └── custom.css
+```
+
+The Support page now provides comprehensive customer support options while maintaining the sleek, minimalist design and cobalt blue theme consistent with the rest of the MBZ Global website.

@@ -1,0 +1,111 @@
+
+<!-- frontend/about-faq.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & FAQ | TBZ Global</title>
+    <link rel="stylesheet" href="styles/materialize.min.css">
+    <link rel="stylesheet" href="styles/fonts/material-icons.css">
+    <link rel="stylesheet" href="styles/custom.css">
+</head>
+<body>
+    <!-- Navigation (Same as homepage) -->
+    <nav class="nav-extended cobalt-blue">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">TBZ Global</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a class="active" href="about-faq.html">FAQ</a></li>
+                <li><a href="legal.html">Legal</a></li>
+                <li><a href="index.html#contact" class="btn waves-effect waves-light light-blue lighten-1">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation (Same as homepage) -->
+    <ul class="sidenav" id="mobile-nav">
+        <!-- Same as homepage -->
+    </ul>
+
+    <!-- About & FAQ Content -->
+    <div class="container">
+        <div class="section">
+            <h1 class="cobalt-blue-text center-align">About TBZ Global</h1>
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="flow-text">TBZ Global is a leading pure water bottling company dedicated to providing premium-quality drinking water while prioritizing environmental sustainability.</p>
+                            <p>Founded with a vision to revolutionize the bottled water industry, we combine state-of-the-art purification technology with eco-conscious packaging solutions.</p>
+                            <p>Our mission is to deliver exceptional hydration while minimizing our environmental footprint through innovative practices and community engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2 class="cobalt-blue-text center-align">Frequently Asked Questions</h2>
+            
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_1</i>What makes TBZ water different?</div>
+                    <div class="collapsible-body">
+                        <p>TBZ Global water undergoes a rigorous 7-step purification process that includes reverse osmosis, UV treatment, and mineral enhancement. Our water exceeds all industry purity standards while maintaining essential minerals for taste and health benefits.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_2</i>Are your bottles recyclable?</div>
+                    <div class="collapsible-body">
+                        <p>Yes, all our bottles are 100% recyclable. We use PET plastic that is widely accepted in recycling programs. Additionally, our bottles contain 30-40% recycled materials, depending on the size, as part of our commitment to circular economy principles.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_3</i>Where is TBZ water sourced?</div>
+                    <div class="collapsible-body">
+                        <p>We source our water from protected underground aquifers that are regularly tested for purity. Before bottling, the water undergoes our advanced purification process to ensure consistent quality and taste.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_4</i>Do you offer bulk ordering?</div>
+                    <div class="collapsible-body">
+                        <p>Yes, we offer bulk ordering options for businesses, events, and institutions. Please contact our sales team through the <a href="index.html#contact">Contact Us</a> page for customized bulk order pricing and delivery options.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_5</i>How can I become a distributor?</div>
+                    <div class="collapsible-body">
+                        <p>We're always looking to expand our distribution network. Interested parties can submit a distributor application through our contact page. Our team will review your application and contact you within 5 business days.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer (Same as homepage) -->
+    <footer class="page-footer cobalt-blue">
+        <!-- Same as homepage -->
+    </footer>
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidenav = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenav);
+            
+            const collapsible = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(collapsible);
+        });
+    </script>
+</body>
+</html>
+
+
